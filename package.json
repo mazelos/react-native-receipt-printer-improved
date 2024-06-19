@@ -1,6 +1,6 @@
 {
   "name": "react-native-receipt-printer-improved",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "A React Native library for thermal printers that supports USB/BLE/Net. Fork of react-native-thermal-receipt-printer",
   "main": "dist/index.js",
   "source": "dist/index.js",
