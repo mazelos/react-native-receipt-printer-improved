@@ -296,14 +296,13 @@ RCT_EXPORT_METHOD(printQrCode:(NSString *)qrCode
     }
 }
 
-RCT_EXPORT_METHOD(openDrawer:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
-{
+RCT_EXPORT_METHOD(openDrawer:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
   @try {
     !connected_ip ? [NSException raise:@"Invalid connection" format:@"Can't connect to printer"] : nil;
     [[PrinterSDK defaultPrinterSDK] openCasher];
     resolve(@(YES));
   } @catch (NSException *exception) {
-    reject(@[exception.reason]);
+    reject(@"open_drawer_error", exception.reason, nil);
   }
 }
 

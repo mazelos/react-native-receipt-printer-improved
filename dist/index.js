@@ -187,7 +187,7 @@ export var NetPrinter = {
     },
     openDrawer: function () {
         return new Promise(function (resolve, reject) {
-            return RNNetPrinter.openDrawer(function (success) { return (success ? resolve() : reject()); });
+            RNNetPrinter.openDrawer(function () { return resolve(); }, function (e) { return reject(e); });
         });
     }
 };
