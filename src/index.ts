@@ -260,9 +260,7 @@ export const NetPrinter = {
   },
 
   openDrawer: (): Promise<void> => {
-    return new Promise((resolve, reject) => {
-      RNNetPrinter.openDrawer(() => resolve(), (e: unknown) => reject(e))
-    })
+    return RNNetPrinter.openDrawer();
   }
 };
 
