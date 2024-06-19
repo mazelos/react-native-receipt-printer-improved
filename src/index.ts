@@ -258,6 +258,12 @@ export const NetPrinter = {
       );
     }
   },
+
+  openDrawer: (): Promise<void> => {
+    return new Promise((resolve, reject) =>
+      RNNetPrinter.openDrawer((success: boolean) => (success ? resolve() : reject()))
+    )
+  }
 };
 
 export const NetPrinterEventEmitter = new NativeEventEmitter(RNNetPrinter);

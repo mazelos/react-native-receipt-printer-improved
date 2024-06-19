@@ -296,5 +296,15 @@ RCT_EXPORT_METHOD(printQrCode:(NSString *)qrCode
     }
 }
 
+RCT_EXPORT_METHOD(openDrawer:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
+{
+  @try {
+    [[PrinterSDK defaultPrinterSDK] openCasher];
+    resolve(@(YES));
+  } @catch (NSException *exception) {
+    reject(@"open_drawer_error", exception.reason, nil);
+  }
+}
+
 @end
 
